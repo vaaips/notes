@@ -1,14 +1,14 @@
 <ion-header>
   <ion-item no-lines>
     <ion-title text-center>Notes</ion-title>
-    <ion-icon name="add" item-end></ion-icon>
+    <ion-icon name="add" item-end (click)="goToNote()"></ion-icon>
   </ion-item>
 </ion-header>
 
 <ion-content>
   <ion-list>
     <ion-item-sliding #item>
-      <ion-item no-padding>
+      <ion-item no-padding (click)="goToNote()">
         <ion-title>Into the wild of south african deserts</ion-title>
         <small padding-left>Sep-12-2018 10:34 AM</small>
       </ion-item>
@@ -19,7 +19,7 @@
       </ion-item-options>
     </ion-item-sliding>
     <ion-item-sliding #item>
-      <ion-item no-padding>
+      <ion-item no-padding (click)="goToNote()">
         <ion-title>The tragic produce can't tire the jump.</ion-title>
         <small padding-left>Sep-12-2018 08:06 AM</small>
       </ion-item>
@@ -30,7 +30,7 @@
       </ion-item-options>
     </ion-item-sliding>
     <ion-item-sliding #item>
-      <ion-item no-padding>
+      <ion-item no-padding (click)="goToNote()">
         <ion-title>Is the approve brilliant</ion-title>
         <small padding-left>Sep-12-2018 07:10 AM</small>
       </ion-item>
@@ -41,7 +41,7 @@
       </ion-item-options>
     </ion-item-sliding>
     <ion-item-sliding #item>
-      <ion-item no-padding>
+      <ion-item no-padding (click)="goToNote()">
         <ion-title>The bustling path imagines into the orange village</ion-title>
         <small padding-left>Sep-12-2018 03:43 AM</small>
       </ion-item>
