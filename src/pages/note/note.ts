@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import AutoSize from 'autosize'
 
 /**
  * Generated class for the NotePage page.
@@ -20,6 +21,7 @@ export class NotePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad NotePage');
+    AutoSize(document.querySelector('textarea'));
   }
 
 }
