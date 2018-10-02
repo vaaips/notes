@@ -27,4 +27,9 @@ page-note {
   textarea {
     width: 100% !important;
   }
+
+  .item-inner, ion-item {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+  }
 }
