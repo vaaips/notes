@@ -11,4 +11,20 @@ page-note {
     width: 100%;
     text-align: center;
   }
+
+  .scroll-content{
+    padding-bottom: 0 !important;
+  }
+
+  .item-inner {
+    padding: 0 !important;
+  }
+
+  .text-input {
+    margin: 0;
+  }
+
+  textarea {
+    width: 100% !important;
+  }
 }
