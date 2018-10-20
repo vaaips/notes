@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import AutoSize from 'autosize';
+import { Storage } from '@ionic/storage';
 
 /**
  * Generated class for the NotePage page.
@@ -15,10 +16,20 @@ import AutoSize from 'autosize';
   templateUrl: 'note.html',
 })
 export class NotePage {
+  id;
+  notes: any[] = [];
+  text;
   note;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.note = navParams.get("text");
+  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
+    this.id = navParams.get("id");
+    this.storage.get('notes').then(value => {
+      this.notes = value;
+    })
+  }
+
+  update() {
+    this.storage.set('notes', this.notes);
   }
 
   ionViewDidLoad() {
