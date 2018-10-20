@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import AutoSize from 'autosize';
 import { Storage } from '@ionic/storage';
+import _ from 'lodash'
 
 /**
  * Generated class for the NotePage page.
@@ -25,6 +26,8 @@ export class NotePage {
     this.id = navParams.get("id");
     this.storage.get('notes').then(value => {
       this.notes = value;
+      this.note = _.find(this.notes, ['id', this.id])
+      this.text = this.note.text
     })
   }
 
