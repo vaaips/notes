@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { NotePage } from '../note/note'
 import moment from 'moment';
+import { text } from '@angular/core/src/render3/instructions';
 
 @Component({
   selector: 'page-home',
@@ -19,7 +20,11 @@ export class HomePage {
   }
 
   goToNote(note) {
-    this.navCtrl.push(NotePage, { text: note})
+    this.navCtrl.push(NotePage, { text: note })
+  }
+
+  newNote() {
+    this.navCtrl.push(NotePage, { text: '' } )
   }
 
 }
