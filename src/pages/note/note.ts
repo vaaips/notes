@@ -4,6 +4,7 @@ import AutoSize from 'autosize';
 import { Storage } from '@ionic/storage';
 import _ from 'lodash'
 import moment from 'moment'
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the NotePage page.
@@ -37,6 +38,10 @@ export class NotePage {
   update() {
     this.notes.splice(this.index, 1, {id: this.id, text: this.text, date: moment().format('dddd, MMMM Do YYYY, h:mm:ss')});
     this.storage.set('notes', this.notes);
+  }
+
+  backToHome() {
+    this.navCtrl.setRoot(HomePage)
   }
 
   ionViewDidLoad() {

@@ -1,15 +1,11 @@
 page-note {
-  .back-button {
-    z-index: 100;
+  ion-icon {
+    font-size: 2.8rem;
+    padding-left: 1rem;
   }
   
-  .note-title {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    text-align: center;
+  .header-wrapper {
+    display: flex;
   }
 
   .scroll-content{
