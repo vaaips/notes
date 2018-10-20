@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import AutoSize from 'autosize';
 import { Storage } from '@ionic/storage';
 import _ from 'lodash'
+import moment from 'moment'
 
 /**
  * Generated class for the NotePage page.
@@ -21,6 +22,7 @@ export class NotePage {
   notes: any[] = [];
   text;
   note;
+  index;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
     this.id = navParams.get("id");
@@ -28,10 +30,12 @@ export class NotePage {
       this.notes = value;
       this.note = _.find(this.notes, ['id', this.id])
       this.text = this.note.text
+      this.index = _.findIndex(this.notes, {id: this.id})
     })
   }
 
   update() {
+    this.notes.splice(this.index, 1, {id: this.id, text: this.text, date: moment().format('dddd, MMMM Do YYYY, h:mm:ss')});
     this.storage.set('notes', this.notes);
   }
 
