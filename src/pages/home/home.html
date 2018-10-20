@@ -7,10 +7,10 @@
 
 <ion-content>
   <ion-list>
-    <ion-item-sliding #item>
-      <ion-item no-padding (click)="goToNote()">
-        <ion-title>Into the wild of south african deserts</ion-title>
-        <small padding-left>Sep-12-2018 10:34 AM</small>
+    <ion-item-sliding #item *ngFor="let note of notes">
+      <ion-item no-padding (click)="goToNote(note)">
+        <ion-title text-capitalize>{{ note.text }}</ion-title>
+        <small padding-left>{{ note.date }}</small>
       </ion-item>
       <ion-item-options side="left">
         <button ion-button  color="danger" icon-only>
@@ -18,7 +18,7 @@
         </button>
       </ion-item-options>
     </ion-item-sliding>
-    <ion-item-sliding #item>
+    <!-- <ion-item-sliding #item>
       <ion-item no-padding (click)="goToNote()">
         <ion-title>The tragic produce can't tire the jump.</ion-title>
         <small padding-left>Sep-12-2018 08:06 AM</small>
@@ -50,6 +50,6 @@
           <ion-icon name="trash"></ion-icon>
         </button>
       </ion-item-options>
-    </ion-item-sliding>
+    </ion-item-sliding> -->
   </ion-list>
 </ion-content>
