@@ -43,7 +43,7 @@ export class NotePage {
   }
 
   update() {
-    this.notes.splice(this.index, 1, {id: this.id, text: this.text, date: Number(moment().format('x'))});
+    this.notes.splice(this.index, 1, {id: this.id, text: this.text, date: this.note.date});
     // this.notes = []
     this.storage.set('notes', this.notes);
   }
