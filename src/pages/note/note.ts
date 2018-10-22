@@ -27,16 +27,24 @@ export class NotePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
     this.id = navParams.get("id");
-    this.storage.get('notes').then(value => {
-      this.notes = value;
-      this.note = _.find(this.notes, ['id', this.id])
-      this.text = this.note.text
-      this.index = _.findIndex(this.notes, {id: this.id})
-    })
+    if(this.id == undefined) {
+      this.storage.get('notes').then(value => {
+        this.notes = value;
+      })
+    }
+    else {
+      this.storage.get('notes').then(value => {
+        this.notes = value;
+        this.note = _.find(this.notes, ['id', this.id])
+        this.text = this.note.text
+        this.index = _.findIndex(this.notes, {id: this.id})
+      })
+    }
   }
 
   update() {
     this.notes.splice(this.index, 1, {id: this.id, text: this.text, date: moment().format('dddd, MMMM Do YYYY, h:mm:ss')});
+    // this.notes = []
     this.storage.set('notes', this.notes);
   }
 
