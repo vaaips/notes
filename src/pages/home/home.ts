@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { NotePage } from '../note/note'
 import { Storage } from '@ionic/storage';
+import moment from 'moment';
+import _ from 'lodash'
 
 @Component({
   selector: 'page-home',
@@ -13,8 +15,6 @@ export class HomePage {
   constructor(public navCtrl: NavController, private storage: Storage) {
     storage.get('notes').then((value) => {
       this.notes = value
-      console.log(this.notes);
-      
     });
   }
 
@@ -23,7 +23,19 @@ export class HomePage {
   }
 
   newNote() {
-    this.navCtrl.push(NotePage, { text: '' } )
+    var last = _.findLast(this.notes)
+    var id
+    if(!last) {
+      id = 1;
+    }
+    else {
+      id = last.id + 1
+    }
+    var note = {id: id, text: '', date: moment().format('dddd, MMMM Do YYYY, h:mm:ss')}
+    this.notes.push(note)
+    
+    this.storage.set('notes', this.notes)
+    this.navCtrl.push(NotePage, { 'id': id })
   }
 
 }
