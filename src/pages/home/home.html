@@ -10,7 +10,7 @@
     <ion-item-sliding #item *ngFor="let note of notes">
       <ion-item no-padding (click)="goToNote(note.id)">
         <ion-title text-capitalize>{{ note.text }}</ion-title>
-        <small padding-left>{{ note.date }}</small>
+        <small>{{ note.date }}</small>
       </ion-item>
       <ion-item-options side="left">
         <button ion-button  color="danger" icon-only (click)="deleteNote(note.id)">

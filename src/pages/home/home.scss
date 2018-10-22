@@ -1,5 +1,20 @@
 page-home {
 
+  ion-header {
+    .input-wrapper {
+      height: 56px;
+    }
+  }
+
+  .toolbar-title {
+    padding-left: 2rem;
+  }
+
+  small {
+    padding-left: 2rem;
+    font-size: 1.5rem;
+  }
+
   .create-note {
     z-index: 100;
   }
