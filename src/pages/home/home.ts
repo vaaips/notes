@@ -4,6 +4,7 @@ import { NotePage } from '../note/note'
 import { Storage } from '@ionic/storage';
 import moment from 'moment';
 import _ from 'lodash'
+import uniqid from 'uniqid'
 
 @Component({
   selector: 'page-home',
@@ -27,16 +28,11 @@ export class HomePage {
 
   newNote() {
     var last = _.findLast(this.notes)
-    var id
-    if(!last) {
-      id = 1;
-      this.notes = [{id: id, text: '', date: Number(moment().format('x'))}]
-    }
-    else {
-      id = last.id + 1
-      var note = {id: id, text: '', date: Number(moment().format('x'))}
-      this.notes.push(note)
-    }
+    var id = uniqid()
+    
+    var note = {id: id, text: '', date: Number(moment().format('x'))}
+    this.notes.unshift(note)
+
     this.storage.set('notes', this.notes)
     this.navCtrl.push(NotePage, { 'id': id })
   }
