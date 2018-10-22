@@ -38,4 +38,8 @@ export class HomePage {
     this.navCtrl.push(NotePage, { 'id': id })
   }
 
+  deleteNote(id) {
+    this.notes = _.reject(this.notes, {'id': id})
+    this.storage.set('notes', this.notes)
+  }
 }

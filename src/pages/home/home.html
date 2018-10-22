@@ -13,7 +13,7 @@
         <small padding-left>{{ note.date }}</small>
       </ion-item>
       <ion-item-options side="left">
-        <button ion-button  color="danger" icon-only>
+        <button ion-button  color="danger" icon-only (click)="deleteNote(note.id)">
           <ion-icon name="trash"></ion-icon>
         </button>
       </ion-item-options>
