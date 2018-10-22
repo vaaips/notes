@@ -11,10 +11,13 @@ import _ from 'lodash'
 })
 export class HomePage {
   notes;
+  moment = moment
 
   constructor(public navCtrl: NavController, private storage: Storage) {
     storage.get('notes').then((value) => {
       this.notes = value
+      console.log(this.notes);
+      
     });
   }
 
@@ -27,11 +30,11 @@ export class HomePage {
     var id
     if(!last) {
       id = 1;
-      this.notes = [{id: id, text: '', date: moment().format('dddd, MMMM Do YYYY, h:mm:ss')}]
+      this.notes = [{id: id, text: '', date: Number(moment().format('x'))}]
     }
     else {
       id = last.id + 1
-      var note = {id: id, text: '', date: moment().format('dddd, MMMM Do YYYY, h:mm:ss')}
+      var note = {id: id, text: '', date: Number(moment().format('x'))}
       this.notes.push(note)
     }
     this.storage.set('notes', this.notes)
