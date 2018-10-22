@@ -22,10 +22,15 @@ page-note {
 
   textarea {
     width: 100% !important;
+    height: 50vh;
   }
 
   .item-inner, ion-item {
     border-bottom-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  ion-card {
     box-shadow: none !important;
   }
 }
