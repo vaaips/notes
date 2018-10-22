@@ -17,8 +17,6 @@ export class HomePage {
   constructor(public navCtrl: NavController, private storage: Storage) {
     storage.get('notes').then((value) => {
       this.notes = value
-      console.log(this.notes);
-      
     });
   }
 
