@@ -27,13 +27,13 @@ export class HomePage {
     var id
     if(!last) {
       id = 1;
+      this.notes = [{id: id, text: '', date: moment().format('dddd, MMMM Do YYYY, h:mm:ss')}]
     }
     else {
       id = last.id + 1
+      var note = {id: id, text: '', date: moment().format('dddd, MMMM Do YYYY, h:mm:ss')}
+      this.notes.push(note)
     }
-    var note = {id: id, text: '', date: moment().format('dddd, MMMM Do YYYY, h:mm:ss')}
-    this.notes.push(note)
-    
     this.storage.set('notes', this.notes)
     this.navCtrl.push(NotePage, { 'id': id })
   }
