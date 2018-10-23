@@ -15,7 +15,17 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
-@import url('https://fonts.googleapis.com/css?family=Mali:400,600,700');
+@font-face {
+  font-family: 'Mali';
+  src: url(../assets/fonts/Mali-Regular.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Mali';
+  src: url(../assets/fonts/Mali-SemiBold.ttf);
+  font-weight: 600;
+}
 
 body {
   font-family: 'Mali', cursive;
