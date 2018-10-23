@@ -49,7 +49,11 @@ export class NotePage {
   }
 
   backToHome() {
-    this.navCtrl.setRoot(HomePage)
+    if(!this.text) {
+      this.notes.splice(this.index, 1)
+      this.storage.set('notes', this.notes);
+    }
+    this.navCtrl.push(HomePage)
   }
 
   ionViewDidLoad() {
