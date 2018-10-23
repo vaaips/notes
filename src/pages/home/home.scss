@@ -1,5 +1,4 @@
 page-home {
-
   ion-header {
     .input-wrapper {
       height: 56px;
@@ -29,5 +28,22 @@ page-home {
     height: 100%;
     width: 100%;
     text-align: center;
+  }
+
+  ion-item-sliding {
+    border: 1px solid;
+
+    border-image: linear-gradient(to right, #fff, #fbc02d, #fff) !important;
+    border-image-slice: 1 !important;
+    border-top: none !important;
+    border-right: none !important;
+    border-left: none !important;
+
+    .item-inner {
+      border-bottom: none !important;
+    }
+    ion-item-options {
+      border-bottom: none !important;
+    }
   }
 }
