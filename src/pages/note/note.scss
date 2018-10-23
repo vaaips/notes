@@ -23,7 +23,7 @@ page-note {
 
   textarea {
     width: 100% !important;
-    height: 50vh;
+    height: calc(100vh - 102px);
     font-family: 'Mali', cursive;
     font-weight: 600;
     font-size: 1.8rem;
