@@ -25,14 +25,16 @@ export class HomePage {
   }
 
   newNote() {
-    var last = _.findLast(this.notes)
+
+    // Create new note
     var id = uniqid()
-    
     var note = {id: id, text: '', date: Number(moment().format('x'))}
     this.notes.unshift(note)
-
     this.storage.set('notes', this.notes)
+
+    // Remove the content
     this.notes = []
+
     this.navCtrl.push(NotePage, { 'id': id })
   }
 

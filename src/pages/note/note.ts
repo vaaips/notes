@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import AutoSize from 'autosize';
 import { Storage } from '@ionic/storage';
 import _ from 'lodash'
-import moment from 'moment'
 import { HomePage } from '../home/home';
 
 /**
@@ -27,12 +26,7 @@ export class NotePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
     this.id = navParams.get("id");
-    if(this.id == undefined) {
-      this.storage.get('notes').then(value => {
-        this.notes = value;
-      })
-    }
-    else {
+    if(this.id) {
       this.storage.get('notes').then(value => {
         this.notes = value;
         this.note = _.find(this.notes, ['id', this.id])
@@ -44,11 +38,12 @@ export class NotePage {
 
   update() {
     this.notes.splice(this.index, 1, {id: this.id, text: this.text, date: this.note.date});
-    // this.notes = []
     this.storage.set('notes', this.notes);
   }
 
   backToHome() {
+
+    // Delete note if it has no content and back to home page
     if(!this.text) {
       this.notes.splice(this.index, 1)
       this.storage.set('notes', this.notes);
@@ -57,7 +52,6 @@ export class NotePage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad NotePage');
     AutoSize(document.querySelector('textarea'));
   }
 }
