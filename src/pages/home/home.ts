@@ -32,6 +32,7 @@ export class HomePage {
     this.notes.unshift(note)
 
     this.storage.set('notes', this.notes)
+    this.notes = []
     this.navCtrl.push(NotePage, { 'id': id })
   }
 
