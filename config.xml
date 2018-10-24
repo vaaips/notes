@@ -2,7 +2,7 @@
 <widget id="com.vaaip.notes" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Notes</name>
     <description>Keep Notes Simply</description>
-    <author email="hello@vaaip.com" href="http://vaaip.com/">Vaaip Software design, develop & maintain studio</author>
+    <author email="hello@vaaip.com" href="http://vaaip.com/">Vaaip Software Studio</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
