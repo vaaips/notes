@@ -13,6 +13,11 @@ import uniqid from 'uniqid'
 export class HomePage {
   notes;
   moment = moment
+  introNotes = [
+    {id: 1, text: 'Welcome to Notes. Keep your notes here simply!!!', date: Number(moment().format('x'))},
+    {id: 2, text: 'Tap on + icon to create new note.', date: Number(moment().format('x'))},
+    {id: 3, text: 'Slid to left and tap on trash icon to delete a note.', date: Number(moment().format('x'))}
+  ];
 
   constructor(public navCtrl: NavController, private storage: Storage) {
     storage.get('notes').then((value) => {
