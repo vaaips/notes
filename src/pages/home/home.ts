@@ -22,6 +22,10 @@ export class HomePage {
   constructor(public navCtrl: NavController, private storage: Storage) {
     storage.get('notes').then((value) => {
       this.notes = value
+      if(!this.notes) {
+        this.notes = this.introNotes
+        storage.set('notes', this.notes)
+      }
     });
   }
 
