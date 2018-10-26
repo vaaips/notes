@@ -1,19 +1,15 @@
-### Build Android for release
-Here is the steps to build and prepare android for release
+## Notes
 
-1. Build
-```
-$ ionic cordova build android --prod --release
-```
-2. Sign
-```
-$ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore ./certs/release-key.jks ./platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk notesapp
-```
-3. Optimise
-```
-$ ~/Library/Android/sdk/build-tools/27.0.3/zipalign -v 4 ./platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk notesapp.apk
-```
-4. Verify
-```
-$ ~/Library/Android/sdk/build-tools/27.0.3/apksigner verify notesapp.apk
-```
+##### Keep Notes Simply
+
+Notes is a simple and minimal note-taking app. It's best for taking quick notes.
+
+### Demo
+
+#### Android
+
+[![Android](https://i.imgur.com/WdvkuMz.png)}](https://youtu.be/T8Xo8U2PBJE)
+
+#### iOS
+
+[![iOS](https://i.imgur.com/WdvkuMz.png)}](https://youtu.be/T8Xo8U2PBJE)
