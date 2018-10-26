@@ -4,14 +4,12 @@
   </ion-toolbar>
 </ion-header>
 
-
 <ion-content>
   <ion-card>
     <ion-card-content>
       <ion-item no-padding>
-        <ion-textarea placeholder="Type notes here" class="text" [(ngModel)]="text" (ionChange)="update()"></ion-textarea>
+        <ion-textarea placeholder="Type notes here" class="text" [(ngModel)]="text" (ionChange)="update()" #Textarea></ion-textarea>
       </ion-item>
     </ion-card-content>
   </ion-card>
-  
 </ion-content>

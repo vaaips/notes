@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import AutoSize from 'autosize';
 import { Storage } from '@ionic/storage';
@@ -12,7 +12,6 @@ import { HomePage } from '../home/home';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-note',
   templateUrl: 'note.html',
@@ -23,6 +22,8 @@ export class NotePage {
   text;
   note;
   index;
+  @ViewChild("Textarea") textarea;
+  title: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
     this.id = navParams.get("id");
@@ -34,6 +35,12 @@ export class NotePage {
         this.index = _.findIndex(this.notes, {id: this.id})
       })
     }
+  }
+
+  ionViewWillEnter() {
+    setTimeout(() => {         
+      this.textarea.setFocus();
+    }, 500);
   }
 
   update() {
