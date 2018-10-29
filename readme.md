@@ -6,13 +6,13 @@ Notes is a simple and minimal note-taking app. It's best for taking quick notes.
 
 ### Demo
 
-#### Android
+#### Android Screencast
 
-[![Android](https://i.imgur.com/aXLC3Kp.png)](https://youtu.be/T8Xo8U2PBJE)
+[![Android](https://i.imgur.com/J3ZTh5Z.png)](https://youtu.be/T8Xo8U2PBJE)
 
-#### iOS
+#### iOS Screencast
 
-[![iOS](https://i.imgur.com/aXLC3Kp.png)](https://youtu.be/T8Xo8U2PBJE)
+[![iOS](https://i.imgur.com/4GJpiuw.png)](https://youtu.be/Kx42Ldef5Kg)
 
 ### Serve
 1. Clone Git repository
