@@ -40,7 +40,7 @@ export class NotePage {
   ionViewWillEnter() {
     setTimeout(() => {         
       this.textarea.setFocus();
-    }, 500);
+    }, 1000);
   }
 
   update() {
